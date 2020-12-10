@@ -20,8 +20,7 @@ namespace DesafioMutant.Controllers
         public ActionResult<string> Get()
         {
             Connection c = new Connection();
-            c.save();
-            return "";
+            return c.save();
         }
     }
 }

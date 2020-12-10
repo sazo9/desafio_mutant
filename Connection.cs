@@ -57,8 +57,9 @@ namespace DesafioMutant
                 Console.WriteLine("ERROR: "+sql+"\n"+e.ToString());
             }
         }
-        public void save()
+        public string save()
         {
+            
             string cs = @"server=localhost;userid=root;password=root;database=desafio";
             conn = new MySqlConnection(cs);
             conn.Open();
@@ -71,10 +72,11 @@ namespace DesafioMutant
                     insertUser(u);
                     insertAddres(u.id, u.address);
                     insertCompany(u.id, u.company);
+                    
                 }
             }
-            
             conn.Close();
+            return "DADOS GRAVADOS COM SUCESSO!";
         }
 
         public List<Models.User> getListUser()
